@@ -1,0 +1,104 @@
+* {
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+body {
+	height: 100vh;
+	width: 100vw;
+	background-color: #000;
+	font-family: sans serif;
+	overflow: hidden;
+}
+.container {
+	height: 100%;
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type:x mandatory;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	}
+	.container::-webkit-scrollbar { width: 2px; height: 0.4px; }
+	.container::-webkit-scrollbar-thumb { background: #feeeca; border-radius: 5px;}
+	.container::-webkit-scrollbar-track { background: transparent; }
+.container > div {
+	scroll-snap-align: start;
+	flex-shrink: 0;
+	transform: scale(1);
+	transform-origin: center center;
+	transition: transform 0.5s;
+	overflow: hidden;
+	height:100%;
+	width:100%;
+	display:grid;
+	grid-template-columns:repeat(4,90px);
+}
+.hero > button, #screen {
+	background-color: #000;
+	color: #7cfc00;
+	outline:none;
+	border: 1px solid #7cfc00;
+	font-weight:600;
+	margin: 2px
+}
+.hero > button {
+	font-size:20px;
+	border-radius:20px;
+}
+.hero #screen{
+	border-radius:20px;
+	padding: 5px;
+}
+.hero > button:active {
+	text-shadow: 0 0 5px #7cfc00, 0 0 10px #7cfc00, 0 0 20px #7cfc00, 0 0 60px #7cfc00, 0 0 90px #7cfc00;
+	box-shadow: 0 0 50px #7cfc00;
+	transition: 0.1s;
+}
+.hero2 > button, #screen2 {
+	background-color: #7cfc00;
+	color: #000;
+	outline:none;
+	border: 1px solid #000;
+	font-weight:600;
+	margin: 2px
+}
+.hero2 > button {
+	font-size:20px;
+	border-radius:20px;
+}
+.hero2 #screen2{
+	border-radius:20px;
+	padding: 5px;
+}
+.hero2 > button:active {
+	text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 20px #000, 0 0 60px #000, 0 0 90px #000;
+	box-shadow: 0 0 50px #000;
+	transition: 0.1s;
+}
+.hero input {
+	grid-column:span 4;
+	text-align:end;
+	font-size:40px;
+	padding: 2px 2px;
+	height: auto;
+	margin: 0;
+}
+.hero input::placeholder {
+	color: #7cfc00;
+}
+.hero2 input {
+	grid-column:span 4;
+	text-align:end;
+	font-size:40px;
+	padding: 2px 2px;
+	height: auto;
+	margin: 0;
+}
+.hero2 input::placeholder {
+	color: #000;
+}
+#result {
+	grid-column: span 2;
+	font-size:40px;
+	padding:0;
+}
